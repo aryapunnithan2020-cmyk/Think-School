@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- VIRUS WARNING SCREEN -->
+<div id="virusWarning" style="
+  position:fixed;
+  inset:0;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+  font-family:'Segoe UI', sans-serif;
+">
+  <div style="
+    background:#fff;
+    padding:30px;
+    border:2px solid red;
+    border-radius:12px;
+    text-align:center;
+    max-width:320px;
+  ">
+    <h2 style="color:red; margin-bottom:20px;">⚠ Warning ⚠</h2>
+    <p style="color:black; margin-bottom:20px;">This site might contain a virus that can affect your device.</p>
+    <button onclick="acceptWarning()" style="
+      margin:5px;
+      padding:10px 18px;
+      border:none;
+      background:green;
+      color:white;
+      font-weight:bold;
+      border-radius:6px;
+      cursor:pointer;
+    ">Accept</button>
+    <button onclick="rejectWarning()" style="
+      margin:5px;
+      padding:10px 18px;
+      border:none;
+      background:red;
+      color:white;
+      font-weight:bold;
+      border-radius:6px;
+      cursor:pointer;
+    ">Reject</button>
+  </div>
+</div>
+
+<script>
+function acceptWarning() {
+  document.getElementById('virusWarning').style.display = 'none';
+  // Optionally, trigger your e-card to show immediately
+  document.getElementById('card').classList.add('show');
+}
+
+function rejectWarning() {
+  alert("You chose to reject. The page will not proceed.");
+  // Optionally redirect somewhere safe
+  window.location.href = "https://example.com";
+}
+</script>
+
+<title>For Amma ❤️</title>
+
+<style>
+
+*{box-sizing:border-box;}
+
+body{margin:0;height:100vh;background:radial-gradient(circle at center, #12071f, #000);overflow:hidden;font-family:'Segoe UI',sans-serif;color:#fff;transition:background 3s ease;}
+
+canvas{position:fixed;inset:0;z-index:0;}
+
+
+
+/* INTRO SCREEN */
+
+.intro{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:5;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);transition:opacity 1.2s ease;}
+
+.intro.fade{opacity:0;pointer-events:none;}
+
+.intro h1{font-size:2rem;letter-spacing:2px;animation:glow 2.5s infinite;}
+
+@keyframes glow{0%,100%{text-shadow:0 0 8px #ff9de2;}50%{text-shadow:0 0 18px #ff9de2;}}
+
+
+
+/* CARD */
+
+.card{position:relative;z-index:2;width:360px;max-width:90vw;padding:30px;border-radius:26px;background:linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));backdrop-filter:blur(14px);box-shadow:0 0 60px rgba(255,160,220,0.25);margin:auto;top:50%;transform:translateY(-50%) scale(0.85);text-align:center;opacity:0;transition:all 1.4s ease;}
+
+.card.show{opacity:1;transform:translateY(-50%) scale(1);}
+
+h2{font-size:1.25rem;margin-bottom:14px;line-height:1.4;} 
+
+p{font-size:0.95rem;line-height:1.7;opacity:0.95; transition: opacity 1.5s ease;}
+
+.oath{position:relative;opacity:0;animation:fadeIn 1.5s forwards;}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+
+.surprise{margin-top:18px;padding:10px 18px;border-radius:999px;border:none;cursor:pointer;background:linear-gradient(135deg,#ff9de2,#ffd36e);color:#000;font-weight:600;transition:transform 0.3s, box-shadow 0.3s;}
+
+.surprise:hover{transform:scale(1.08);box-shadow:0 0 20px #ff9de2;}
+
+.hidden{display:none;margin-top:16px;color:#ffd6ff;}
+
+footer{margin-top:18px;font-size:0.7rem;opacity:0.6;}
+
+
+
+/* CONFETTI */
+
+.confetti-piece{position:absolute;width:8px;height:8px;background: #fff;opacity:0.9;border-radius:50%;pointer-events:none;}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<canvas id="stars"></canvas>
+
+
+
+<div class="intro" id="intro">
+
+  <h1>✨ Just for You, Amma ✨</h1>
+
+</div>
+
+
+
+<div class="card" id="card">
+
+  <h2>To a beautiful yet very fierceful woman in my life</h2>
+
+  <p>When my mom needs a brush — not just for beauty, but for the gentle strokes she leaves on everyone’s soul.</p>
+
+  <button class="surprise" onclick="reveal()">Tap for another truth</button>
+
+
+
+  <div class="hidden" id="extra">
+
+    <p class="oath">When you can’t stand, I’ll be the ground beneath you.<br>When you can’t see the way forward, I’ll be the one holding the light.<br><br>No matter what you face, no matter how broken or lost you feel, I will stand behind you — quietly, fiercely — helping you rise, helping you chase anything your heart dares to want.</p>
+
+    <button class="surprise" onclick="unlockSecond()">One more thing, Amma</button>
+
+
+
+    <div class="hidden" id="second">
+
+      <p class="oath">Even if a hundred storms crash into your life, even on the days your legs give up and your heart feels tired, you will never be alone.</p>
+
+      <button class="surprise" onclick="unlockFinal()">One last surprise</button>
+
+    </div>
+
+
+
+    <div class="hidden" id="final">
+
+      <p class="oath" style="margin-top:14px;">Many more surprises await you, Amma ❤️</p>
+
+      <p style="margin-top:10px; font-size:0.85rem; opacity:0.85;">This page will always open for you.</p>
+
+    </div>
+
+  </div>
+
+
+
+  <footer>— from your child, in pixels and love</footer>
+
+</div>
+
+
+
+<script>
+
+const intro=document.getElementById('intro');
+
+const card=document.getElementById('card');
+
+
+
+intro.addEventListener('click',()=>{
+
+  intro.classList.add('fade');
+
+  card.classList.add('show');
+
+});
+
+
+
+/* Reveal functions with fade effect */
+
+function reveal(){ const el=document.getElementById('extra'); el.classList.toggle('hidden'); if(!el.classList.contains('hidden')) el.style.opacity='1'; }
+
+function unlockSecond(){ const el=document.getElementById('second'); el.classList.toggle('hidden'); if(!el.classList.contains('hidden')) el.style.opacity='1'; }
+
+function unlockFinal(){ const el=document.getElementById('final'); el.classList.toggle('hidden'); if(!el.classList.contains('hidden')) el.style.opacity='1'; launchConfetti(); }
+
+
+
+/* Stars Canvas */
+
+const canvas=document.getElementById('stars');
+
+const ctx=canvas.getContext('2d'); 
+
+let w,h;
+
+function resize(){ w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight;} 
+
+window.addEventListener('resize',resize); resize();
+
+
+
+const stars=Array.from({length:200},()=>({x:Math.random()*w, y:Math.random()*h, r:Math.random()*1.6+0.3, v:Math.random()*0.25+0.05}));
+
+canvas.addEventListener('mousemove', e => {stars.forEach(s=>{let dx=e.clientX-s.x, dy=e.clientY-s.y, dist=Math.sqrt(dx*dx+dy*dy); if(dist<80){s.x-=dx*0.002; s.y-=dy*0.002;}})});
+
+
+
+function draw(){ 
+
+  ctx.clearRect(0,0,w,h); 
+
+  ctx.fillStyle='white'; 
+
+  stars.forEach(s=>{s.y+=s.v;if(s.y>h)s.y=0; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill();}); 
+
+  requestAnimationFrame(draw); 
+
+}
+
+draw();
+
+
+
+/* Confetti */
+
+function launchConfetti(){
+
+  for(let i=0;i<120;i++){
+
+    let div=document.createElement('div');
+
+    div.className='confetti-piece';
+
+    div.style.left=Math.random()*window.innerWidth+'px';
+
+    div.style.top='-10px';
+
+    div.style.background=`hsl(${Math.random()*360},80%,70%)`;
+
+    document.body.appendChild(div);
+
+    animateConfetti(div);
+
+  }
+
+}
+
+function animateConfetti(el){
+
+  let y=0;
+
+  const speed=2+Math.random()*3;
+
+  const rot=Math.random()*360;
+
+  const rotSpeed=(Math.random()-0.5)*10;
+
+  const fall=setInterval(()=>{
+
+    y+=speed;
+
+    el.style.top=y+'px';
+
+    el.style.transform=`rotate(${rot+rotSpeed*y}deg)`;
+
+    if(y>window.innerHeight){el.remove(); clearInterval(fall);}
+
+  },16);
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
